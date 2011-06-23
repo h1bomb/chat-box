@@ -17,8 +17,8 @@ var options = {
 http.get(options, function(response) {
 	console.log("Got response: " + response.statusCode);
 	response.on('data', function(chunk) {
-		res.writeHead(200, {'Content-Type': 'text/javascript'});
-		res.end(chunk);
+		response.writeHead(200, {'Content-Type': 'text/javascript'});
+		response.end(chunk);
 	})
 }).on('error', function(e) {
 	console.log("Got error: " + e.message);
