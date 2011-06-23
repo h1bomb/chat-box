@@ -4,8 +4,8 @@ var server = http.createServer(function (req, res) {
 var options = {
 	host: 'api.twitter.com',
 	port: 80,
-	path: '/1/statuses/user_timeline.json',
-	data: {'screen_name': 'timonwang' , 'count': '100'}
+	path: '/statuses/public_timeline.json'//,
+	//data: {'screen_name': 'timonwang' , 'count': '100'}
 };
 http.get(options, function(response) {
 	console.log("Got response: " + response.statusCode);
