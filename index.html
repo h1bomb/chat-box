@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>im</title>
+	<link rel="stylesheet" type="text/css" href="source/style.css" />
+	<script type="text/javascript" src="lib/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="client/message.js"></script>
+	<script type="text/javascript" src="client/io.js"></script>
+	<script type="text/javascript" src="client/tab.js"></script>
+	<script type="text/javascript" src="client/contactList.js"></script>
+	<script type="text/javascript" src="client/index.js"></script>
+</head>
+
+<body>
+<div id="error"></div>
+<div class="logo">ChatBox</div>
+<div id="login">
+	ID:<br/><input id="id" type="text"/><br/>
+	password:<br/><input id="psw" type="password"/><br/>
+    <button id="submit">submit</button><button id="login_reg">register</button>
+</div>
+<div id="reg">
+	nickname:<br/><input id="nickname"/><br/>
+	password:<br/><input id="reg_psw"/><br/>
+	<button id="reg_submit">register</button>
+</div>
+<div id="main">
+	<button id="log_out">log out</button>
+	<div id="chat_room" val="0" class="tab">chat room</div>
+	<div id="unread_tab" val="-1" class="tab">unread</div>
+	<div class="clear"></div>
+	<div id="chat_con" val="0" class="tab_con">
+		<!--
+			<div class="contact_name"><span>name</span>:</div>
+			<div class="message">message</div>
+		-->
+	</div>
+	<div id="unread_con" val="-1" class="tab_con"></div>
+	<div id="send">
+		<input type="text"/>
+		<button>send</button>
+	</div>
+	<div id="contact_list">
+		<ul>
+		<!--
+			<li val = "xxx">name<button>X</button></li>
+		-->
+		</ul>
+	</div>
+	
+</div>
+</body>
+</html>
