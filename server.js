@@ -6,15 +6,15 @@ var qs = require("querystring"),
     user = require("./server/user");
     message = require("./server/message");
 
-fu.listen(8001, null);
-fu.get("/", fu.staticHandler("../index.html"));
-fu.get("/source/style.css", fu.staticHandler("../source/style.css"));
-fu.get("/lib/jquery-1.5.2.min.js", fu.staticHandler("../lib/jquery-1.5.2.min.js"));
-fu.get("/client/message.js", fu.staticHandler("../client/message.js"));
-fu.get("/client/io.js", fu.staticHandler("../client/io.js"));
-fu.get("/client/tab.js", fu.staticHandler("../client/tab.js"));
-fu.get("/client/contactList.js", fu.staticHandler("../client/contactList.js"));
-fu.get("/client/index.js", fu.staticHandler("../client/index.js"));
+server.listen(process.env.PORT || 8001);
+fu.get("/", fu.staticHandler("./index.html"));
+fu.get("/source/style.css", fu.staticHandler("./source/style.css"));
+fu.get("/lib/jquery-1.5.2.min.js", fu.staticHandler("./lib/jquery-1.5.2.min.js"));
+fu.get("/client/message.js", fu.staticHandler("./client/message.js"));
+fu.get("/client/io.js", fu.staticHandler("./client/io.js"));
+fu.get("/client/tab.js", fu.staticHandler("./client/tab.js"));
+fu.get("/client/contactList.js", fu.staticHandler("./client/contactList.js"));
+fu.get("/client/index.js", fu.staticHandler("./client/index.js"));
 
 //send message
 fu.get("/send",function(req, res)
