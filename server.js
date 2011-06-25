@@ -6,7 +6,7 @@ var qs = require("querystring"),
     user = require("./server/user");
     message = require("./server/message");
 
-server.listen(process.env.PORT || 8001);
+fu.listen(process.env.PORT || 8001);
 fu.get("/", fu.staticHandler("./index.html"));
 fu.get("/source/style.css", fu.staticHandler("./source/style.css"));
 fu.get("/lib/jquery-1.5.2.min.js", fu.staticHandler("./lib/jquery-1.5.2.min.js"));
