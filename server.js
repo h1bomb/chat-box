@@ -1,10 +1,10 @@
-process["DB_URL"] = 'mongodb://root:123321@localhost/im';
+process["DB_URL"] = 'mongodb://127.0.0.1/im';
 var qs = require("querystring"),
     sys = require("sys"),
-    fu = require("./fu"),
+    fu = require("./server/fu"),
     url = require("url"),
-    user = require("./user");
-    message = require("./message");
+    user = require("./server/user");
+    message = require("./server/message");
 
 fu.listen(8001, null);
 fu.get("/", fu.staticHandler("../index.html"));
