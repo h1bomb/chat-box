@@ -79,12 +79,15 @@ var Message =
 	
 	initUnread:function(data)
 	{
-		var ret = "";
-		$.each(data,function(k,v)
+		if(data&&data.length>0)
 		{
-			ret += Message.temp(v);
-		});
-		$("#unread_con").html(ret);
+			var ret = "";
+			$.each(data,function(k,v)
+			{
+				ret += Message.temp(v);
+			});
+			$("#unread_con").html(ret);	
+		}
 	},
 	
 	joinin:function(data)

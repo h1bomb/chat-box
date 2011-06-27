@@ -9,12 +9,15 @@ var ContactList =
 	},
 	init:function(data)
 	{
-		var ret = "";
-		$.each(data,function(k,v)
+		if(data.length>0)
 		{
-			ret += ContactList.temp(v);
-		});
-		$("#contact_list ul").html(ret);
+			var ret = "";
+			$.each(data,function(k,v)
+			{
+				ret += ContactList.temp(v);
+			});
+			$("#contact_list ul").html(ret);
+		}
 	},
 	add:function(self)
 	{

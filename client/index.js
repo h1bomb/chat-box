@@ -131,7 +131,10 @@ UI_control=
 	},
 	mainInit:function(data)
 	{
-		ContactList.init(data.contacts);
+		if(data.contacts)
+		{
+			ContactList.init(data.contacts);
+		}
 		Message.initUnread(data.unreadInfo);
 		Tab.init();	
 		UI_control.id = data.id;
