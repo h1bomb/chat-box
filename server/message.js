@@ -175,13 +175,24 @@ msg.addCall = function(id,callback)
 	}
 	else
 	{
-		callback([]);
+		callback([],{suc:false,data:"you can't get message ,because you offline!"});
 	}
 }
 
 msg.addMsg = function(msg,id,callback)
 {
 	var session = sessions[id];
+	if(!id)
+	{
+		if(callback){callback("id error!")};
+		return;
+	}
+	if(!session)
+	{
+		if(callback){callback("session error!")};
+		return;
+	}
+	
 	msg.from = session.id;
 	msg.name = session.name;
 	console.log(msg.name+":"+msg.info);
@@ -267,7 +278,7 @@ msg.createSession  = function (name,id)
 		 info:"I'm coming now!",
 		 to:0
   },session.id);
-  
+  console.log(session);
   return session;
 }
 

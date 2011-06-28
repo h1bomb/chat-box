@@ -88,6 +88,11 @@ function addState(data)
 
 user.get = function(req,callback)
 {
+	if(!Number(req.id))
+	{
+		callback("ID is wrong!");
+		return;
+	}
 	User.findOne({id:req.id},function(err, doc)
 	{
 		if(!err)

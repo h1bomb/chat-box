@@ -40,7 +40,11 @@ UI_control=
 		     info: "password is not filled!"
 	       }
 	    ]);
-	
+	    if(!Number(id))
+	    {
+	    	alert("id is wrong! ");
+	    	return;
+	    }
 	    if(ret)
 	    {
 		 	var req = 
@@ -95,7 +99,7 @@ UI_control=
 				if(data.suc)
 				{
 					$("#reg").hide();
-					UI_control.mainInit(data);
+					UI_control.mainInit(data.data);
 				}
 				else
 				{

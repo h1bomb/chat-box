@@ -35,7 +35,7 @@ fu.get("/send",function(req, res)
 					res.simpleJSON(400, { suc: false
 					                     ,info: err
 					                    });
-				    console.log('save msg failed');
+				    console.log(err);
 				  }
 				  else
 				  {
@@ -121,12 +121,20 @@ fu.get("/loop",function(req,res)
 {
 	var re = qs.parse(url.parse(req.url).query);
 	message.addCall(re.id,
-	function(res_arr)
+	function(res_arr,err)
 	{
-		res.simpleJSON(200, { 
-			                  suc: true
-		                     ,info: res_arr
-		                    });
+		if(err)
+		{
+			res.simpleJSON(400, err);	
+		}
+		else
+		{
+			res.simpleJSON(200, 
+			{ 
+              suc: true
+             ,info: res_arr
+	        });	
+		}
 	});
 });
 
